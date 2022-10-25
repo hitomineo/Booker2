@@ -1,0 +1,61 @@
+
+<p id="notice"></p>
+    <div class='container px-5 px-sm-0'>
+      <div class='row'>
+            <div class='col-md-3'>
+
+
+
+                <h2>User info</h2>
+                     <table class='table'>
+                      <tbody>
+                         <tr><%= image_tag @user.get_profile_image(100,100) %>
+                         </tr>
+                         <tr>
+                            <th>name</th>
+                            <th><%= @user.name %></th>
+                         </tr>
+                          <tr>
+                            <th>introduction</th>
+                            <th><%= @user.introduction %></th>
+                          </tr>
+                      </tbody>
+                     </table>
+
+                        <%= link_to  edit_user_path(@user.id), class: "btn btn-outline-dark" do %>
+                         <i class="fas fa-user-cog"></i>
+                         <% end %>
+
+
+
+                <h2>New book</h2>
+                   <%= form_with model: @book, local:true do |f| %>
+                        <h4>Title</h4>
+                           <%= f.text_field :title %>
+                        <h4>Opinion</h4>
+                           <%= f.text_area :body %>
+
+                              <br> <%= f.submit 'Create Book',  class: "btn btn-success"  %>
+                  <% end %>
+            </div>                  
+
+
+                <div class='col-md-8 offset-md-1'>
+                   <h2>Books</h2>
+                       <table class='table'>
+                               <thead>
+                                  <tr>
+                                      <th colspan="1"></th>
+                                      <th>Title</th>
+                                      <th>Opinion</th>
+                                      <th colspan="3"></th>
+                                  </tr>
+                               </thead>
+                       </table>
+                   </div>
+
+
+      </div>
+   </div>
+
+
