@@ -4,12 +4,6 @@ Rails.application.routes.draw do
     get  'home/about', to: 'homes#about'
     resources :books, only: [:index, :create, :destroy, :update, :edit, :show]
     resources :users, only: [:index,:show, :edit,:update]
-  # get 'homes/top'
-  # get 'homes/sign_in'
-  # post '/sign_in'=> 'users#create'
-  # get 'homes/sign_up'
-  # post '/sine_up'=>'users#create'
-
 #   get '/users/:id'=>'users#show'
 #   get '/users/show'=>'users#index'
 
